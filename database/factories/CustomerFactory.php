@@ -20,7 +20,7 @@ class CustomerFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
-            'avatar' => $this->faker->numberBetween(0, 2), // 0, 1, or 2
+            'avatar' => $this->faker->numberBetween(1, 3), // 1, 2, or 3
             'created_at' => now(),
             'updated_at' => now(),
         ];

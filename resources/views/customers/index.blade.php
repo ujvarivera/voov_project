@@ -2,6 +2,8 @@
 
 @section('content')
 
+<h1>{{ __('Ügyfelek')}}</h1>
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -14,7 +16,10 @@
   <tbody>
       @foreach ($customers as $customer)
       <tr>
-          <td>{{ $customer->name }}</td>
+          <td>
+            <img src="{{ asset('images/avatars/avatar_0' . $customer->avatar . '.png') }}" alt="Avatar" width="50" height="50">
+            {{ $customer->name }}
+          </td>
           <td>{{ $customer->email }}</td>
           <td>{{ $customer->phone }}</td>
           <td>{{ __('Törlés') }}</td>
