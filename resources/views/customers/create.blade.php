@@ -10,17 +10,32 @@
 
         <div class="mb-3">
             <label for="name" class="form-label">{{ __('Név') }}</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required>
+            @error('name')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-3">
             <label for="email" class="form-label">{{ _('Email') }}</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" required>
+            @error('email')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-3">
             <label for="phone" class="form-label">{{ _('Telefonszám') }}</label>
-            <input type="text" class="form-control" id="phone" name="phone" required>
+            <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" required>
+            @error('phone')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-3">
