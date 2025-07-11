@@ -36,6 +36,13 @@ class CustomerController extends Controller
 
         Customer::create($validated);
 
-        return redirect()->route('customers.index')->with('success', 'Customer created successfully!');
+        return redirect()->route('customers.index')->with('success', __('Ügyfél sikeresen hozzáadva'));
+    }
+
+    public function destroy(Customer $customer)
+    {
+        $customer->delete();
+
+        return redirect()->route('customers.index')->with('success', __('Ügyfél sikeresen törölve'));
     }
 }

@@ -4,6 +4,12 @@
 
 <h1>{{ __('Ügyfelek')}}</h1>
 
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -22,7 +28,15 @@
           </td>
           <td>{{ $customer->email }}</td>
           <td>{{ $customer->phone }}</td>
-          <td>{{ __('Törlés') }}</td>
+          <td>
+            <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this customer?');">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-link p-0 m-0 text-black" style="text-decoration: none;">
+                    {{ __('Törlés') }}
+                </button>
+            </form>
+          </td>
         </tr>
         @endforeach
   </tbody>
