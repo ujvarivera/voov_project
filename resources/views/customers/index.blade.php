@@ -28,5 +28,8 @@
   </tbody>
 </table>
 
+<a href="{{ route('customers.create') }}" class="btn btn-primary mb-3">
+    {{ __('ÚJ ÜGYFÉL HOZZÁADÁSA') }}
+</a>
 
 @endsection
