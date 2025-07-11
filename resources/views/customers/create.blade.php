@@ -12,30 +12,33 @@
 
                 <div class="mb-3">
                     <label for="name" class="form-label">{{ __('Név') }}</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}"
+                        placeholder="Add meg a teljes nevet">
                     @error('name')
                         <div class="invalid-feedback">
-                            {{ __($message) }}
+                            {{ $message }}
                         </div>
                     @enderror
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">{{ _('Email') }}</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
+                    <label for="email" class="form-label">{{ __('Email') }}</label>
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" 
+                        value="{{ old('email') }}" placeholder="Add meg az emailt">
                     @error('email')
                         <div class="invalid-feedback">
-                            {{ __($message) }}
+                            {{ $message }}
                         </div>
                     @enderror
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">{{ _('Telefonszám') }}</label>
-                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone">
+                    <label for="phone" class="form-label">{{ __('Telefonszám') }}</label>
+                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" 
+                        value="{{ old('phone') }}" placeholder="Add meg a telefonszámot">
                     @error('phone')
                         <div class="invalid-feedback">
-                            {{ __($message) }}
+                            {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -55,12 +58,12 @@
                 </div>
             </form>
         </div>
+    </div>
 
-        <button type="submit" class="btn btn-primary" style="width: fit-content; margin: 0 auto;" 
-            form="createForm">
-            {{ _('Ügyfél mentése') }}
+    <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary px-5" form="createForm">
+            {{ __('Ügyfél mentése') }}
         </button>
-  
     </div>
 </div>
 @endsection

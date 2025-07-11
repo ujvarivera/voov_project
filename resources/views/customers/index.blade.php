@@ -32,7 +32,7 @@
                         <td>{{ $customer->email }}</td>
                         <td>{{ $customer->phone }}</td>
                         <td>
-                            <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this customer?');">
+                            <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" onsubmit="return confirm('Biztos törölni szeretnéd?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-link p-0 m-0 text-black text-uppercase font-weight-bold" style="text-decoration: none;">
