@@ -10,3 +10,15 @@ body {
 h1 {
     font-family: 'Instrument Serif', serif;
 }
+
+/* Make the label cursor pointer */
+.avatar-label {
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+/* Add an outline when the input is checked */
+input[type="radio"]:checked + .avatar-label img {
+    border: 3px solid #0d6efd;
+    border-radius: 50%;
+}
